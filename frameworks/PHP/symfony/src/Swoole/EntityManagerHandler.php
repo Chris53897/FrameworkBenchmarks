@@ -9,13 +9,8 @@ use Swoole\Http\Response;
 
 final class EntityManagerHandler implements RequestHandlerInterface
 {
-    private $decorated;
-    private $entityManager;
-
-    public function __construct(RequestHandlerInterface $decorated, EntityManagerInterface $entityManager)
+    public function __construct(private RequestHandlerInterface $decorated, private EntityManagerInterface $entityManager)
     {
-        $this->decorated = $decorated;
-        $this->entityManager = $entityManager;
     }
 
     /**

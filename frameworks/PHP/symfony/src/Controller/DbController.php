@@ -10,15 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DbController
 {
-    /** @var EntityManagerInterface */
-    private $entityManager;
-    /** @var WorldRepository */
-    private $worldRepository;
-
-    public function __construct(EntityManagerInterface $entityManager, WorldRepository $worldRepository)
+    public function __construct(private EntityManagerInterface $entityManager,
+                                private WorldRepository        $worldRepository)
     {
-        $this->entityManager = $entityManager;
-        $this->worldRepository = $worldRepository;
     }
 
     #[Route('/db')]
